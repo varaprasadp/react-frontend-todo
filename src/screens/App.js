@@ -15,8 +15,8 @@ class App extends React.Component {
         if (item.name === n) {
           item.done = !(item.done);
         }
-        const item1=item;
-        return item1;
+        console.log(item)
+        return item;
       });
       console.log(updatedData)
       return { data: updatedData };
