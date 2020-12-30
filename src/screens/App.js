@@ -13,25 +13,19 @@ class App extends React.Component {
     this.setState((prevState) => {
       const updatedData = prevState.data.map((item) => {
         if (item.name === n) {
-          item.done = !(item.done);
+          item.done = !item.done;
         }
-        console.log(item)
         return item;
       });
-      console.log(updatedData)
       return { data: updatedData };
     });
   };
 
   render() {
     return (
-      <div>
+      <div className="main-content">
         {this.state.data.map((item) => (
-          <ToDoItem
-            key={item.id}
-            data={item}
-            handleChange={this.handleChange}
-          />
+          <ToDoItem key={item.id} data={item} />
         ))}
       </div>
     );
